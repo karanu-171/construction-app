@@ -1,0 +1,35 @@
+.oxl {
+    background-color: rgb(233, 221, 221);
+    border-radius: 60px;
+    box-shadow: 11px 12px 13px 12px white;
+}
+
+.ot {
+    color: #00828c;
+}
+
+.det {
+    opacity: 0.4;
+}
+
+.link {
+    background-color: aqua;
+    padding: 10px 40px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.link-2 {
+    background-color: #00828c;
+    padding: 10px 60px;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.emp2-1 {
+    text-decoration: none;
+    color: black;
+}
+
+.emp2-2 {
+    text-decoration: none;
+    color: black;
+}  
