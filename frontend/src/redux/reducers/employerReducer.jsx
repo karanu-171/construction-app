@@ -31,7 +31,7 @@ const employerReducer = (state = initialState, action) => {
         },
       };
 
-    case actionTypes.SIGN_EMPLOYER:
+    case actionTypes.LOGIN_EMPLOYER:
       const validEmployer = jwtDecode(action.payload);
       toast.success("Login successful...", {
         position: toast.POSITION.BOTTOM_RIGHT,

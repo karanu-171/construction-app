@@ -1,11 +1,11 @@
 import React, { useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { loginTechnician } from '../../../redux/actions/technicianActions';
+import { loginEmployer } from '../../../redux/actions/employerActions';
 import './Login.css';
 import profile from '../../images/profile-icon.png';
 
-const Login = ({authentication}) => {
+const Login2 = ({authentication}) => {
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
@@ -14,7 +14,7 @@ const Login = ({authentication}) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const technicianAuth = useSelector((state) => state.technicianReducer);
+  const employerAuth = useSelector((state) => state.employerReducer);
 
   const loginChange = (e) => {
     setLoginData((prevState) => ({
@@ -24,13 +24,13 @@ const Login = ({authentication}) => {
   }
 
   useEffect(() => {
-   
-    if(technicianAuth.technician._id) {
-      console.log(technicianAuth.technician._id);
+    if (employerAuth.employer._id) {
       authentication();
-      navigate("/")
+      navigate("/architecture");
     }
-  }, [technicianAuth.technician._id,navigate]);
+    
+    
+  }, [employerAuth.employer._id,navigate]);
 
   
 
@@ -39,7 +39,7 @@ const Login = ({authentication}) => {
     console.log(loginData);
     try {
       
-      dispatch(loginTechnician(loginData));
+      dispatch(loginEmployer(loginData));
       //navigate("/architecture")
     } catch (error) {
       console.log(error)
@@ -67,7 +67,7 @@ const Login = ({authentication}) => {
        <button type='submit' className='log'>Login</button>
        </div>
        <div className='mt-3'>
-       <Link to='/login-2' className='forward'>Login as an employer</Link>
+       <Link to='/login' className='forward'>Login as an technician</Link>
        </div>
        <div className='reg'>
        <Link to='/register-1' className='forward'>Don't have an Account? Sign Up</Link>
@@ -80,4 +80,4 @@ const Login = ({authentication}) => {
   )
 }
 
-export default Login
+export default Login2

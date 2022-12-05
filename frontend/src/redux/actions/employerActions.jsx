@@ -21,6 +21,7 @@ export const registerEmployer = (employer) => async (dispatch) => {
 
 export const loginEmployer = (employer) => async (dispatch) => {
   try {
+    console.log(employer)
     const response = await api.loginEmployer(employer);
     localStorage.setItem("token", response.data);
     dispatch({
@@ -28,8 +29,8 @@ export const loginEmployer = (employer) => async (dispatch) => {
       payload: response.data,
     });
   } catch (error) {
-    console.log(error.response.data);
-    toast.error(error.response?.data, {
+    console.log(error);
+    toast.error(error.response.data, {
       position: toast.POSITION.BOTTOM_RIGHT,
     });
   }

@@ -31,8 +31,15 @@ const technicianSchema = new mongoose.Schema({
     approved: {
       type: Boolean,
       default: false
+    },
+    ratings: {
+      star: Number,
+      postedBy: { type: mongoose.Schema.Types.ObjectId, ref: "Employer"}
+    },
+    totalRating: {
+      type: String,
+      default: 0
     }
-    
 });
 
 const Technician = mongoose.model("Technician", technicianSchema);

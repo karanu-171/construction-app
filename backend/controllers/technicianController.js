@@ -156,6 +156,7 @@ async function deleteTechnician(req, res) {
   }
 }
 
+
 module.exports = {
   technicianRegister,
   signTechnician,

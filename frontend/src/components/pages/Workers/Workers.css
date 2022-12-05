@@ -21,3 +21,9 @@
     cursor: pointer;
     color: #FFBA5A;
 }
+
+.rate {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}

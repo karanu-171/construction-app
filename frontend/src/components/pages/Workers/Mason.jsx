@@ -6,6 +6,7 @@ import './Workers.css';
 
 const Mason = () => {
   const [technicians, setTechnicians] = useState([])
+  const stars = Array(5).fill()
 
   useEffect(()=>{
     axios.get("http://localhost:4000/technician")
@@ -40,10 +41,15 @@ const Mason = () => {
         <div><h5 className='card-title'>{technician.fullName}</h5></div>
         <div><p className='card-text'>{technician.registerAs}</p></div>
         <div><p className='card-text'>{technician.location}</p></div>
-        <div><p className='card-text'><FaStar size={24} className='fa'/> {3}</p></div>
-        </div>
-     </div>
-     </Link>
+        <div className='rate'>
+        {stars.map((_, i)=>(
+          <div key={i} className=''><p className='' ><FaStar size={24} className='fa'/></p></div>
+          )
+          )}
+          </div>
+          </div>
+          </div>
+          </Link>
      </div>
      ))}
      

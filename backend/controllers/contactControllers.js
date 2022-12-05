@@ -20,9 +20,19 @@ async function saveContact(req, res){
     } catch (error) {
         console.log(error)
     }
-}  
+} 
 
+async function getContact(req, res) {
+  try {
+    const contacts = await Contact.find({})
+    res.status(200).send(contacts)
+  } catch (error) {
+    res.status(500).send(error.message)
+    console.log(error)
+  }
+}
 
 module.exports = {
-  saveContact
+  saveContact,
+  getContact
 }

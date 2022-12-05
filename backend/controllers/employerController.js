@@ -74,13 +74,16 @@ async function signEmployer(req, res) {
     //check if employer exists
 
     let employer = await Employer.findOne({ email: req.body.email });
-    if (!employer) res.status(400).send("invalid email or password ..");
-
+    if (!employer) {
+     return res.status(400).send("invalid email ...");
+    }
     //compare password
 
     const validEmployer = await bcrypt.compare(req.body.password, employer.password);
 
-    if (!validEmployer) return res.status(400).send("Invalid email or password..");
+    if (!validEmployer) {
+      return res.status(400).send("Invalid password ...");
+    }
 
     //generating a token
 
@@ -97,7 +100,9 @@ async function signEmployer(req, res) {
     );
 
     //   return success response
-    res.status(200).send(token);
+    if(token){
+      res.status(200).send(token);
+    }
   } catch (error) {
     res.status(500).send(error.message);
     console.log(error);

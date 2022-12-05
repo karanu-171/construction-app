@@ -5,7 +5,6 @@ import { actionTypes } from "./types";
 
 export const registerTechnician = (technician) => async (dispatch) => {
   try {
-    console.log(technician)
     const response = await api.createTechnician(technician);
     localStorage.setItem("token", response.data);
     dispatch({
@@ -22,6 +21,7 @@ export const registerTechnician = (technician) => async (dispatch) => {
 
 export const loginTechnician = (technician) => async (dispatch) => {
   try {
+    console.log(technician)
     const response = await api.loginTechnician(technician);
     console.log(response.data)
     localStorage.setItem("token", response.data);

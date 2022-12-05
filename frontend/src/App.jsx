@@ -18,6 +18,7 @@ import Welder from './components/pages/Workers/Welder';
 import Electrician from './components/pages/Workers/Electrician';
 import View from './components/pages/view/View';
 import Chat from './components/pages/chat/Chat';
+import Login2 from './components/pages/Login/Login2';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
       <Route path='/view/:id' element={<View/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/login' element={<Login authentication= {authentication}/>}/>
+      <Route path='/login-2' element={<Login2 authentication= {authentication}/>}/>
       <Route path='/profile' element={<Profile/>}/> 
       <Route path='/register-1' element={<RegisterOne/>}/> 
       <Route path='/register-2' element={<RegisterTwo/>}/>
