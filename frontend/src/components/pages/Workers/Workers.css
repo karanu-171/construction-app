@@ -1,0 +1,29 @@
+.link-work {
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 25px;
+    color: black;
+}
+
+.link-work-1 {
+    text-decoration: none;
+    color: black;
+    
+}
+
+.card {
+   margin-right: 5px;
+   border-radius: 10px 10px 0px 0px;
+}
+
+.fa {
+    margin-right: 10;
+    cursor: pointer;
+    color: #FFBA5A;
+}
+
+.rate {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
